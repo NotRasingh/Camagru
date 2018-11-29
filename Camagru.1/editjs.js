@@ -1,16 +1,7 @@
 /* var cbx = document.getElementById("chbx");
 cbx.addEventListener("change", notifsub()); */
  
-function notifsub(cbx)
-{
-    if (cbx.checked)
-    {
-        alert('checkbox is checked!');
-    }
-    else{
-        alert("TSEK");
-    }
-}
+
 
 function checkcheck()
 {
@@ -30,7 +21,6 @@ function checkcheck()
        else{
            box.checked = false;
        }
-     
    }
    };
 xhr.send(newvars);  

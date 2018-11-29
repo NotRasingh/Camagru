@@ -64,9 +64,9 @@
     <a href="upload.php">Upload</a>   
 </div>
 <br><br>
-<div style="margin:auto;width:610px">
+<div id="page" style="margin:auto;width:610px">
          <?php
-try{
+/* try{
     $con = new PDO("mysql:host=localhost", "root", "123456");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $con->query("USE camagru");
@@ -85,9 +85,13 @@ try{
         catch (PDOException $e) {
             print "Error : ".$e->getMessage()."<br/>";
             die();
-        }
+        } */
                 ?> 
                 </div>  
+                <div >
+                <button id="prev">prev</button> 
+                <button id="next">next</button> 
+                </div>
 </body>
 </html>
 
@@ -122,5 +126,73 @@ window.onclick = function(event) {
 /* function showmodal() {
     document.getElementById("id01").style.display = "block";
 } */
+
+
+offset  = 0;
+num = maximages();
+
+window.onload = function (){
+    document.getElementById("prev").addEventListener('click', function() {
+        previous();
+    });
+    document.getElementById("next").addEventListener('click', function() {
+        next()
+    });
+    getimages(0);
+};
+
+function getimages(offset)
+{
+    var xhr = new XMLHttpRequest();
+   var url = "ajaxfuncs.php";
+   var newvars="value="+offset;
+   xhr.open("POST", url, true);
+   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+   xhr.onreadystatechange = function(){
+   if (xhr.readyState == 4 && xhr.status == 200)
+   {
+       document.getElementById("page").innerHTML = xhr.responseText;
+
+   }
+   };
+xhr.send(newvars);  
+
+}
+function previous()
+{
+    offset -= 12;
+    if (offset < 0)
+    {
+        offset = 0;
+    }
+    getimages(offset);
+}
+
+function maximages()
+{
+    var xhr = new XMLHttpRequest();
+   var url = "ajaxfuncs.php";
+   var newvars="length=wqeqweqwedaw";
+   xhr.open("POST", url, true);
+   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+   xhr.onreadystatechange = function(){
+   if (xhr.readyState == 4 && xhr.status == 200)
+   {
+       num =  xhr.responseText;
+      return num;
+   }
+};
+   xhr.send(newvars);
+}
+function next()
+{
+    offset += 12;
+    var test = num;
+    if (offset >= num)
+    {
+        offset = 0;
+    }
+    getimages(offset);
+}
 
 </script>

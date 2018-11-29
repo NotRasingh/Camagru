@@ -1,0 +1,106 @@
+#overlay {
+    position: absolute;
+    display: block;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+}
+
+.top_container
+{
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+#canvas
+{
+    
+    display: none;
+}
+#canvas2
+{
+    width: 100%;
+    max-width: 500px;
+    display: none;
+}
+
+#emoji1
+{
+    position: absolute;
+    visibility: hidden;
+}
+
+#emoji2
+{
+    position: absolute;
+    visibility: hidden;
+}
+
+#save_photo
+{
+    display: none
+}
+
+.button
+{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    background:  #333;
+    max-width: 500px;
+    width: 100%;
+    border: 0px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button:hover{
+    background: #111;
+    cursor: pointer;
+
+}
+
+.emo_list
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
+}
+
+.emo_list img
+{
+    width: 100%;
+    max-width: 50px;
+    height: auto;
+    border: #FFF 3px solid;
+}
+
+.thumb_nail
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    overflow: hidden;
+}
+
+.thumb_nail img
+{
+    width: 100%;
+    border: #FFF 3px solid;
+}
+
+.uploaded_image
+{
+    display: none;
+}

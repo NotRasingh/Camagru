@@ -14,31 +14,30 @@ session_start();
 </head>
 <body>
     
-    <form>
+    <form method = "POST" action = "conedit.php">
     <fieldset>
     Edit Username <br>
-    <input type='text' id="uname" placeholder="current username"><br>
-    <input type='text' id="newname" placeholder="New username"><br>
-    <br><button type="submit">Change Username</button>
+    <input type='text' name="newname" placeholder="New username"><br>
+    <br><input type="submit" name="user" value="Change Username">
     </fieldset>
     </form>
     <br>
-     <form>
+    <form method = "POST" action = "conedit.php">
     <fieldset>
     Edit Password <br>
-    <input type='password' id="upass" placeholder="current password"><br>
-    <input type='password' id="newpass" placeholder="new password"><br>
-    <input type='password' id="connewpass" placeholder="Confirm new password"><br>
-    <br><button type="submit">Change Password</button>
+    <input type='password' name="upass" placeholder="current password"><br>
+    <input type='password' name="newpass" placeholder="new password"><br>
+    <input type='password' name="conpass" placeholder="Confirm new password"><br>
+    <br><input type="submit" name="pass" value="Change Password">
     </fieldset>
     </form>
     <br>
-     <form>
+    <form method = "POST" action = "conedit.php">
     <fieldset>
     Edit Email<br>
-    <input type='text' id="umail" placeholder="current email"><br>
-    <input type='text' id="newmail" placeholder="new email"><br>
-    <br><button type="submit">Change Email</button>
+    <input type='text' name="umail" placeholder="current email"><br>
+    <input type='text' name="newmail" placeholder="new email"><br>
+    <br><input type="submit" name = "email" value="Change Email">
     </fieldset>
     </form>
     <br>
@@ -89,7 +88,6 @@ session_start();
 <script>
     var box = document.getElementById("chbx");
     window.onload = function() {
-        //alert(box.value);
         checkcheck();
        
 
@@ -111,17 +109,6 @@ session_start();
    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(newvars);  
 }
-       // cbx.addEventListener("change", notifsub(cbx), false);
-    /* if (box.checked)
-     {
-         alert(box.value);
-     }
-     else
-     {
-         alert(box.value);
-        alert("NAH."); 
-     } */
 
-     //checkcheck
 
 </script>

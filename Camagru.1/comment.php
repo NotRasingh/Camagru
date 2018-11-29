@@ -49,7 +49,8 @@ if (isset($_SESSION['username']))
 } 
 else
 {
-    echo '<script>alert("Please sign in to comment")</script>';
+    header('Location: login.php'); 
+     exit();
 }
  header('Location: test.php'); 
 ?>
